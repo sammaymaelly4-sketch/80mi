@@ -9,11 +9,18 @@ export default function HomePage() {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2500);
+    const hasShownSplash = sessionStorage.getItem("splash_shown");
 
-    return () => clearTimeout(timer);
+    if (hasShownSplash) {
+      setShowSplash(false);
+    } else {
+      const timer = setTimeout(() => {
+        setShowSplash(false);
+        sessionStorage.setItem("splash_shown", "true");
+      }, 2500);
+
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   if (showSplash) {
