@@ -9,6 +9,7 @@ import PremiumTodoList from "@/components/flash/PremiumTodoList";
 import SnapCarousel from "@/components/flash/SnapCarousel";
 import StreakPill from "@/components/flash/StreakPill";
 import TipFlipCard from "@/components/flash/TipFlipCard";
+import ExamRemindersRotator from "@/components/exams/ExamRemindersRotator";
 import { softFeedback } from "@/lib/feedback";
 import { getStorageItem, setStorageItem, getStreak, updateStreakIfNeeded } from "@/lib/storage";
 
@@ -72,6 +73,8 @@ export default function HomePage() {
         <h1 className="text-3xl font-semibold">Painel</h1>
         <StreakPill count={streakCount} />
       </header>
+
+      <ExamRemindersRotator />
 
       <section className="space-y-4">
         <h2 className="text-lg font-semibold">Atalhos rápidos</h2>

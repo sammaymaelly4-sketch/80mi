@@ -19,6 +19,7 @@ src/
   components/flash/   # Flash cards premium e listas
   components/nav/     # Bottom navigation
   components/exams/   # Splash de exames
+  data/exams/         # Mocks dos alertinhas e itens ok dos exames
   lib/                # Utilitários (motion, storage, feedback, receitas)
 ```
 
@@ -30,6 +31,13 @@ src/
 - **Agenda > Remédios**: `src/app/agenda/remedios/page.js` (horários e doses).
 - **Agenda > Consultas**: `src/app/agenda/consultas/page.js` (consultas).
 - **Exames**: `src/app/exames/page.js` (lista de exames).
+- **Alertinhas de exames**: `src/data/exams/julio_alert_cards.json` (cards, itens ok e regras de rotação).
+
+## Rotação dos alertinhas
+
+- A Home mostra **1 card por dia**, seguindo prioridade ascendente.
+- O botão **Entendi** (dismiss) oculta o card até o dia seguinte.
+- Os estados são salvos em `localStorage` usando as chaves definidas em `display_rules.rotation.storage_keys`.
 
 ## Persistência local
 
