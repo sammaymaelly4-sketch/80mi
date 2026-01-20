@@ -73,56 +73,56 @@ export default function HomePage() {
         <StreakPill count={streakCount} />
       </header>
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">Atalhos rápidos</h2>
-        <SnapCarousel>
-          {[
-            <ActionCardPremium
-              key="remedio"
-              title="Próximo Remédio"
-              subtitle="14:00 • Losartana 50mg"
-              icon="💊"
-              actionLabel="TOMEI ✅"
-              onAction={() => handleComplete("remedio")}
-              done={completedIds.includes("remedio")}
-            />,
-            <ActionCardPremium
-              key="agenda"
-              title="Agenda do Dia"
-              subtitle="Consulta quinta 10h"
-              icon="🩺"
-              actionLabel="VER"
-              onAction={() => router.push("/agenda")}
-              done={false}
-            />,
-            <ProgressRingCard
-              key="rotina"
-              title="Rotina de Hoje"
-              subtitle="Exercícios leves"
-              icon="🏃‍♂️"
-              value={40}
-            />,
-            <FlashCard
-              key="exames"
-              title="Exames"
-              subtitle="Ver resultados"
-              icon="🔬"
-              actionLabel="Abrir"
-              onClick={() => router.push("/exames")}
-            />
-          ]}
-        </SnapCarousel>
-      </section>
+        <section className="space-y-4">
+          <h2 className="text-lg font-semibold">Atalhos rápidos</h2>
+          <SnapCarousel>
+            {[
+              <ActionCardPremium
+                key="remedio"
+                title="Próximo Remédio"
+                subtitle="14:00 • Losartana 50mg"
+                icon="💊"
+                actionLabel="TOMEI ✅"
+                onAction={() => handleComplete("remedio")}
+                done={completedIds.includes("remedio")}
+              />,
+              <ActionCardPremium
+                key="agenda"
+                title="Agenda do Dia"
+                subtitle="Consulta quinta 10h"
+                icon="🩺"
+                actionLabel="VER"
+                onAction={() => router.push("/agenda")}
+                done={false}
+              />,
+              <ProgressRingCard
+                key="rotina"
+                title="Rotina de Hoje"
+                subtitle="Exercícios leves"
+                icon="🏃‍♂️"
+                value={40}
+              />,
+              <FlashCard
+                key="exames"
+                title="Exames"
+                subtitle="Ver resultados"
+                icon="🔬"
+                actionLabel="Abrir"
+                onClick={() => router.push("/exames")}
+              />
+            ]}
+          </SnapCarousel>
+        </section>
 
-      <TipFlipCard tip={tip} onDone={() => handleComplete("agua")} />
+        <TipFlipCard tip={tip} onDone={() => handleComplete("agua")} />
 
-      <PremiumTodoList
-        title="Hoje"
-        todos={todos}
-        completed={completed}
-        onComplete={handleComplete}
-        emptyLabel="Você cuidou de tudo hoje."
-      />
+        <PremiumTodoList
+          title="Hoje"
+          todos={todos}
+          completed={completed}
+          onComplete={handleComplete}
+          emptyLabel="Você cuidou de tudo hoje."
+        />
     </main>
   );
 }
