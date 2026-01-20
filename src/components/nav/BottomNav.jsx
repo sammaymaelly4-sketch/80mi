@@ -42,10 +42,11 @@ export default function BottomNav() {
                   key={item.label}
                   type="button"
                   onClick={handleExamsClick}
+                  aria-current={isActive ? "page" : undefined}
                   className="-mt-10 flex h-16 w-16 flex-col items-center justify-center rounded-full bg-brand-500 text-white shadow-soft focus-ring"
                   {...tapScale}
                 >
-                  <span className="text-xl">{item.icon}</span>
+                  <span className="text-xl" aria-hidden="true">{item.icon}</span>
                   <span className="text-[11px] font-semibold">EXAMES</span>
                 </motion.button>
               );
@@ -56,11 +57,12 @@ export default function BottomNav() {
                 key={item.label}
                 type="button"
                 onClick={() => router.push(item.href)}
+                aria-current={isActive ? "page" : undefined}
                 className={`flex flex-col items-center gap-1 text-xs font-semibold ${
                   isActive ? "text-brand-600" : "text-slate-400"
                 } focus-ring`}
               >
-                <span className="text-lg">{item.icon}</span>
+                <span className="text-lg" aria-hidden="true">{item.icon}</span>
                 {item.label}
               </button>
             );
