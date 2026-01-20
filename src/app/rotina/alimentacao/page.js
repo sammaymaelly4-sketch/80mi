@@ -61,23 +61,15 @@ export default function AlimentacaoPage() {
       </header>
 
       <section className="space-y-4">
-        <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold">Cardápio Semanal</h2>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={handleGenerateMenu}
-              className="rounded-full bg-brand-500 px-3 py-2 text-xs font-semibold text-white"
-            >
-              Gerar cardápio simples
-            </button>
-            <button
-              type="button"
-              className="rounded-full border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-500"
-            >
-              Editar
-            </button>
-          </div>
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-lg font-semibold">Cardápio semanal</h2>
+          <button
+            type="button"
+            onClick={handleGenerateMenu}
+            className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600"
+          >
+            Gerar novamente
+          </button>
         </div>
         <div className="space-y-3">
           {menu.map((item) => (

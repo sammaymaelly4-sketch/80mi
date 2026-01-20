@@ -21,3 +21,24 @@ main {
 .focus-ring {
   @apply focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-200;
 }
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-enter {
+  animation: fade-slide-in 500ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-enter {
+    animation: none;
+  }
+}
