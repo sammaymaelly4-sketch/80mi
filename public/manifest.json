@@ -1,0 +1,15 @@
+{
+  "name": "JULIO SAÚDE",
+  "short_name": "JulioSaúde",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
