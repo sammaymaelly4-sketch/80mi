@@ -1,0 +1,16 @@
+{
+  "name": "Painel de Saúde",
+  "short_name": "Saúde",
+  "description": "App simples para rotina, agenda e exames.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
