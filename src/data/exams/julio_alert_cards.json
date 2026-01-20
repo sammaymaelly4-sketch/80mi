@@ -1,0 +1,168 @@
+{
+  "patient": {
+    "name": "José Julio Alves dos Santos",
+    "age": 84,
+    "exam_window": "Dez/2025–Jan/2026",
+    "tone": "humano, acolhedor, sem alarmismo, didático e curto"
+  },
+  "cards": [
+    {
+      "id": "alert_sugar",
+      "kind": "reminder_alert",
+      "priority": 1,
+      "severity": "warning",
+      "icon": "🍬",
+      "title": "Açúcar um pouco alto",
+      "values": [
+        { "name": "Hemoglobina glicada (HbA1c)", "value": "6,5", "unit": "%" },
+        { "name": "Glicemia", "value": "138", "unit": "mg/dL" }
+      ],
+      "message": "Julio, seu açúcar ficou um pouco acima do ideal. Pequenos cuidados no dia ajudam bastante.",
+      "what_is": "Esses exames mostram o açúcar no sangue agora e ao longo dos últimos meses.",
+      "why_matters": "Açúcar alto por muito tempo pode cansar o coração, os rins e a visão.",
+      "how_to_improve": [
+        "Caminhada leve 5–10 min hoje",
+        "Reduzir doce e pão à noite",
+        "Beber água ao longo do dia"
+      ],
+      "cta": [
+        { "label": "Ver dica rápida", "type": "open_sheet", "sheet_id": "sugar_quick_tips" },
+        { "label": "Ir para Rotina", "type": "navigate", "to": "/rotina" }
+      ],
+      "animation": { "type": "shrink_meter", "reduced_motion_safe": true }
+    },
+    {
+      "id": "alert_kidney",
+      "kind": "reminder_alert",
+      "priority": 2,
+      "severity": "warning",
+      "icon": "🧃",
+      "title": "Rins pedem cuidado",
+      "values": [
+        { "name": "Creatinina", "value": "1,22", "unit": "mg/dL" },
+        { "name": "eGFR", "value": "58,46", "unit": "mL/min" }
+      ],
+      "message": "Julio, seus rins estão trabalhando mais devagar. Isso é comum na idade e pede carinho diário.",
+      "what_is": "Os rins filtram o sangue e equilibram líquidos e sais.",
+      "why_matters": "Quando trabalham mais devagar, água e menos sal ajudam a evitar sobrecarga.",
+      "how_to_improve": [
+        "Beber 1 copo d’água agora",
+        "Evitar excesso de sal",
+        "Não tomar remédio por conta própria"
+      ],
+      "cta": [
+        { "label": "Beber água 💧", "type": "mark_done", "done_key": "water_now" },
+        { "label": "Dicas rápidas", "type": "open_sheet", "sheet_id": "kidney_quick_tips" }
+      ],
+      "animation": { "type": "gentle_pulse", "reduced_motion_safe": true }
+    },
+    {
+      "id": "alert_anemia",
+      "kind": "reminder_alert",
+      "priority": 3,
+      "severity": "warning",
+      "icon": "🩸",
+      "title": "Energia um pouco baixa",
+      "values": [
+        { "name": "Hemoglobina", "value": "12,3", "unit": "g/dL" },
+        { "name": "Hematócrito", "value": "36,5", "unit": "%" }
+      ],
+      "message": "Julio, seu sangue está um pouco fraco (anemia leve). Isso pode dar cansaço, mas é tratável.",
+      "what_is": "O sangue leva oxigênio para o corpo; quando está baixo, o corpo sente.",
+      "why_matters": "Pode piorar disposição e força no dia a dia.",
+      "how_to_improve": [
+        "Feijão + ovo ou carne na semana",
+        "Alimentação simples e regular",
+        "Rotina leve hoje (2–5 min)"
+      ],
+      "cta": [
+        { "label": "Sugestão de prato 🍽️", "type": "navigate", "to": "/rotina/alimentacao" },
+        { "label": "Entendi 👍", "type": "dismiss" }
+      ],
+      "animation": { "type": "heart_fill", "reduced_motion_safe": true }
+    },
+    {
+      "id": "alert_b12",
+      "kind": "reminder_alert",
+      "priority": 4,
+      "severity": "warning",
+      "icon": "🧠",
+      "title": "Vitamina B12 baixa",
+      "values": [
+        { "name": "Vitamina B12", "value": "175", "unit": "pg/mL" }
+      ],
+      "message": "Julio, sua B12 está baixa. Ela ajuda a memória, os nervos e a disposição.",
+      "what_is": "B12 é uma vitamina essencial para cérebro e nervos.",
+      "why_matters": "Baixa B12 pode causar cansaço, formigamento e piora de memória.",
+      "how_to_improve": [
+        "Anotar para conversar com o médico sobre reposição",
+        "Incluir ovos, leite e carnes na alimentação"
+      ],
+      "cta": [
+        {
+          "label": "Lembrar na consulta 📅",
+          "type": "add_note",
+          "target": "/agenda/consultas",
+          "note": "Conversar sobre reposição de B12 (valor 175 pg/mL)"
+        },
+        { "label": "Dicas de alimentação", "type": "navigate", "to": "/rotina/alimentacao" }
+      ],
+      "animation": { "type": "brain_glow_once", "reduced_motion_safe": true }
+    },
+    {
+      "id": "alert_urine_protein",
+      "kind": "reminder_alert",
+      "priority": 5,
+      "severity": "warning",
+      "icon": "🚰",
+      "title": "Proteína na urina",
+      "values": [
+        { "name": "Urina tipo I — Proteína", "value": "++", "unit": "" }
+      ],
+      "message": "Julio, apareceu proteína na urina. Não é infecção, mas pede atenção com pressão e açúcar.",
+      "what_is": "A urina normalmente não deve perder proteína.",
+      "why_matters": "Pode indicar esforço dos rins ao longo do tempo.",
+      "how_to_improve": [
+        "Água ao longo do dia",
+        "Pouco sal",
+        "Cuidar do açúcar e da pressão",
+        "Repetir exame quando o médico orientar"
+      ],
+      "cta": [
+        { "label": "Ver cuidados do dia 🛡️", "type": "open_sheet", "sheet_id": "urine_protein_quick_tips" },
+        { "label": "Entendi 👍", "type": "dismiss" }
+      ],
+      "animation": { "type": "drop_shield", "reduced_motion_safe": true }
+    }
+  ],
+  "all_ok_section": {
+    "title": "O que está em dia ✅",
+    "items": [
+      { "name": "Vitamina D", "value": "46,22 ng/mL", "status": "ok" },
+      { "name": "PSA", "value": "0,19 ng/mL", "status": "ok" },
+      { "name": "Colesterol total", "value": "171 mg/dL", "status": "ok" },
+      { "name": "HDL", "value": "48 mg/dL", "status": "ok" },
+      { "name": "Triglicerídeos", "value": "114 mg/dL", "status": "ok" },
+      { "name": "PCR", "value": "2,4 mg/L", "status": "ok" },
+      { "name": "TGO/TGP", "value": "normais", "status": "ok" },
+      { "name": "TSH e T4 Livre", "value": "normais", "status": "ok" },
+      { "name": "Urocultura", "value": "negativa", "status": "ok" },
+      { "name": "Parasitológico", "value": "negativo", "status": "ok" },
+      { "name": "Sangue oculto", "value": "negativo", "status": "ok" }
+    ]
+  },
+  "display_rules": {
+    "where_to_show": ["home", "exams"],
+    "rotation": {
+      "mode": "one_per_day",
+      "max_per_day": 1,
+      "dismiss_hides_until_next_day": true,
+      "order": "priority_asc",
+      "storage_keys": {
+        "dismissed_today": "exam_alert_cards_dismissed_YYYY-MM-DD",
+        "shown_today": "exam_alert_cards_shown_YYYY-MM-DD"
+      }
+    },
+    "final_human_message": "Julio, seus exames mostram pontos de cuidado, mas nada fora de controle. Com atenção diária e carinho, você está indo bem ❤️"
+  }
+}
