@@ -17,7 +17,7 @@ export default function HomePage() {
       const timer = setTimeout(() => {
         setShowSplash(false);
         sessionStorage.setItem("splash_shown", "true");
-      }, 2500);
+      }, 1500);
 
       return () => clearTimeout(timer);
     }
@@ -32,7 +32,7 @@ export default function HomePage() {
       <motion.h1
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
         className="text-4xl font-bold text-slate-900"
       >
         Oi Julio
