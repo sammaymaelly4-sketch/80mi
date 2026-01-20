@@ -10,7 +10,9 @@ export default function RotinaPage() {
     <main className="space-y-6">
       <header className="space-y-2">
         <h1 className="text-3xl font-semibold">Rotina</h1>
-        <p className="text-sm text-slate-500">Escolha o que deseja cuidar agora.</p>
+        <p className="text-sm text-slate-500">
+          Sessão rotina com foco em alimentação e exercícios.
+        </p>
       </header>
       <div className="space-y-4">
         <FlashCard

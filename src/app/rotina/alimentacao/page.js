@@ -3,34 +3,24 @@
 import { useState } from "react";
 import FoodIconGrid from "@/components/flash/FoodIconGrid";
 import FlashCard from "@/components/flash/FlashCard";
-import { buildRecipe } from "@/lib/recipeBuilder";
+import { buildMenu, buildRecipe, defaultMenu } from "@/lib/recipeBuilder";
 
 const foods = [
-  { id: "arroz", label: "Arroz", icon: "🍚" },
-  { id: "pao", label: "Pão", icon: "🍞" },
-  { id: "batata", label: "Batata", icon: "🥔" },
-  { id: "macarrao", label: "Macarrão", icon: "🍝" },
-  { id: "ovo", label: "Ovo", icon: "🥚" },
-  { id: "frango", label: "Frango", icon: "🐔" },
-  { id: "carne", label: "Carne", icon: "🥩" },
-  { id: "queijo", label: "Queijo", icon: "🧀" },
-  { id: "cenoura", label: "Cenoura", icon: "🥕" },
-  { id: "tomate", label: "Tomate", icon: "🍅" },
-  { id: "folhas", label: "Folhas", icon: "🥬" },
-  { id: "cebola", label: "Cebola", icon: "🧅" },
-  { id: "banana", label: "Banana", icon: "🍌" },
-  { id: "maca", label: "Maçã", icon: "🍎" },
-  { id: "laranja", label: "Laranja", icon: "🍊" }
-];
-
-const defaultMenu = [
-  { day: "Seg", meals: "Café: pão + queijo • Almoço: arroz + frango • Jantar: sopa" },
-  { day: "Ter", meals: "Café: banana • Almoço: macarrão + carne • Jantar: omelete" },
-  { day: "Qua", meals: "Café: pão + café • Almoço: arroz + salada • Jantar: purê" },
-  { day: "Qui", meals: "Café: fruta • Almoço: frango + legumes • Jantar: canja" },
-  { day: "Sex", meals: "Café: pão + queijo • Almoço: arroz + carne • Jantar: sopa" },
-  { day: "Sáb", meals: "Café: banana • Almoço: macarrão + frango • Jantar: salada" },
-  { day: "Dom", meals: "Café: fruta • Almoço: almoço leve • Jantar: sopa" }
+  { id: "arroz", label: "Arroz", icon: "🍚", group: "carb" },
+  { id: "pao", label: "Pão", icon: "🍞", group: "carb" },
+  { id: "batata", label: "Batata", icon: "🥔", group: "carb" },
+  { id: "macarrao", label: "Macarrão", icon: "🍝", group: "carb" },
+  { id: "ovo", label: "Ovo", icon: "🥚", group: "protein" },
+  { id: "frango", label: "Frango", icon: "🐔", group: "protein" },
+  { id: "carne", label: "Carne", icon: "🥩", group: "protein" },
+  { id: "queijo", label: "Queijo", icon: "🧀", group: "dairy" },
+  { id: "cenoura", label: "Cenoura", icon: "🥕", group: "veg" },
+  { id: "tomate", label: "Tomate", icon: "🍅", group: "veg" },
+  { id: "folhas", label: "Folhas", icon: "🥬", group: "veg" },
+  { id: "cebola", label: "Cebola", icon: "🧅", group: "veg" },
+  { id: "banana", label: "Banana", icon: "🍌", group: "fruit" },
+  { id: "maca", label: "Maçã", icon: "🍎", group: "fruit" },
+  { id: "laranja", label: "Laranja", icon: "🍊", group: "fruit" }
 ];
 
 export default function AlimentacaoPage() {
@@ -47,17 +37,21 @@ export default function AlimentacaoPage() {
   const handleBuild = () => {
     const selectedFoods = foods.filter((food) => selectedIds.includes(food.id));
     setRecipe(buildRecipe(selectedFoods));
+    setMenu(buildMenu(selectedFoods));
   };
 
   const handleGenerateMenu = () => {
-    setMenu(defaultMenu);
+    const selectedFoods = foods.filter((food) => selectedIds.includes(food.id));
+    setMenu(buildMenu(selectedFoods));
   };
 
   return (
     <main className="space-y-8">
       <header className="space-y-2">
         <h1 className="text-3xl font-semibold">Alimentação</h1>
-        <p className="text-sm text-slate-500">Cardápio simples e receitas com o que há em casa.</p>
+        <p className="text-sm text-slate-500">
+          Informe os ingredientes que você tem para gerar receita e cardápio.
+        </p>
       </header>
 
       <section className="space-y-4">
@@ -68,9 +62,14 @@ export default function AlimentacaoPage() {
             onClick={handleGenerateMenu}
             className="rounded-full border border-slate-200 px-4 py-2 text-xs font-semibold text-slate-600"
           >
-            Gerar novamente
+            Gerar com ingredientes
           </button>
         </div>
+        {selectedIds.length === 0 && (
+          <p className="text-xs text-slate-400">
+            Dica: escolha alguns itens abaixo para personalizar o cardápio.
+          </p>
+        )}
         <div className="space-y-3">
           {menu.map((item) => (
             <FlashCard key={item.day} title={item.day} subtitle={item.meals} icon="📅" />
