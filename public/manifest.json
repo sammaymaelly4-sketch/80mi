@@ -1,15 +1,62 @@
 {
-  "name": "JULIO SAÚDE",
-  "short_name": "JulioSaúde",
+  "name": "JULIO SAÚDE - Painel de Saúde 84+",
+  "short_name": "JULIO SAÚDE",
+  "description": "Aplicativo para gerenciar rotina, agenda, medicamentos e exames de saúde",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
+  "categories": ["health", "medical", "lifestyle"],
+  "lang": "pt-BR",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/icons/app-icon.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml"
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
-  ]
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Remédios",
+      "short_name": "Remédios",
+      "description": "Ver horários dos medicamentos",
+      "url": "/agenda/remedios",
+      "icons": [
+        {
+          "src": "/icons/app-icon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Exercícios",
+      "short_name": "Exercícios",
+      "description": "Rotina de exercícios do dia",
+      "url": "/rotina/exercicios",
+      "icons": [
+        {
+          "src": "/icons/app-icon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Exames",
+      "short_name": "Exames",
+      "description": "Ver resultados de exames",
+      "url": "/exames",
+      "icons": [
+        {
+          "src": "/icons/app-icon.svg",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
 }
